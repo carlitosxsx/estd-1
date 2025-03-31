@@ -4,7 +4,7 @@ public class Lista {
 
     public No inicio;
 
-    public void Lista() {
+    public Lista() {
         this.inicio = null;
     }
 

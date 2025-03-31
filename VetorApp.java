@@ -33,6 +33,7 @@ public class VetorApp {
         vetor.mostrarElementos();
 
         vetor.adicionarAoInicio(28);
+        vetor.organizarElementos();
 
         vetor.mostrarElementos();
 

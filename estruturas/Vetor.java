@@ -26,7 +26,7 @@ public class Vetor {
             this.aumentarCapacidade();
         }
 
-        moverElementos();
+        this.moverElementos();
 
         this.elementos[this.tamanho - this.tamanho] = valor;
         this.tamanho++;
@@ -46,23 +46,20 @@ public class Vetor {
     }
 
     public void mostrarElementos() {
-        System.out.println("-----");
         System.out.print("Elementos no vetor:");
         for (int i=0; i < tamanho; i++) {
             System.out.print(" " + this.elementos[i] + " ");
         }
-        System.out.println("-----");
+        System.out.println();
     }
 
     public void moverElementos(){
-
         for (int i = this.tamanho; i >= 0; i--) {
             if (this.elementos[i+1] == null){
                 this.elementos[i+1] = this.elementos[i];
                 this.elementos[i] = null;
             }
         }
-        
     }
 
     public void contem(Integer valor) {
@@ -99,5 +96,29 @@ public class Vetor {
         }
 
         System.out.println("Item não encontrado");
+    }
+
+    public void buscaBinaria(Integer valor){
+        this.organizarElementos();
+
+        Integer[] listaAux;
+
+    }
+
+    public void organizarElementos(){
+        if (this.capacidade == this.tamanho) {
+            this.aumentarCapacidade();
+        }
+        int aux;
+        for (int i = 0; i < this.tamanho; i++) {
+            for (int j = 0; j < this.tamanho; j++) {
+                if (this.elementos[j] > this.elementos[i]) {
+                    aux = this.elementos[j];
+                    this.elementos[j] = this.elementos[i];
+                    this.elementos[i] = aux;
+
+                }
+            }
+        }
     }
 }
