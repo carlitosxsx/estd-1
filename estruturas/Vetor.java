@@ -101,7 +101,27 @@ public class Vetor {
     public void buscaBinaria(Integer valor){
         this.organizarElementos();
 
-        Integer[] listaAux;
+        Vetor vetorAux = this;
+        int meio;
+
+        while (vetorAux.tamanho > 0) {
+            meio = vetorAux.tamanho / 2;
+            if (vetorAux.elementos[meio] == valor) {
+                System.out.println("Valor encontrado na posição: " + meio);
+                return;
+            } else if (valor > vetorAux.elementos[meio]) { 
+                for (int i = meio; i < vetorAux.tamanho; i++) {
+                    vetorAux.elementos[i-meio] = vetorAux.elementos[i];
+                }
+                vetorAux.tamanho -= meio;
+            } else if (valor < vetorAux.elementos[meio]){
+                for (int i = 0; i < meio; i++) {
+                    vetorAux.elementos[meio-1] = vetorAux.elementos[i];
+                }
+                vetorAux.tamanho -= meio;
+            }
+            vetorAux.mostrarElementos();
+        }
 
     }
 
