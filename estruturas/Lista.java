@@ -24,7 +24,7 @@ public class Lista {
 
     public void mostrarNos() {
         Iterador iterador = this.getIterador();
-        
+
         while (iterador.getAtual() != null) {
             iterador.display();
         }
@@ -45,8 +45,36 @@ public class Lista {
         noAux.proximo.anterior = noAux.anterior;
     }
 
+    public int contaNos() {
+        int contador = 0;
+        No atual = this.inicio;
+
+        while (atual != null) {
+            contador++;
+            atual = atual.proximo;
+        }
+        return contador;
+    }
+
+    public void adicionarAoFim(int valor) {
+        No novo = new No(valor);
+
+        if (this.inicio == null) {
+            this.inicio = novo;
+            return;
+        }
+
+        No atual = this.inicio;
+
+        while (atual.proximo != null) {
+            atual = atual.proximo;
+        }
+
+        atual.proximo = novo;
+        novo.anterior = atual;
+    }
+
     public Iterador getIterador() {
         return new Iterador(this, this.inicio);
     }
 }
-
