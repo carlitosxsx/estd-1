@@ -1,4 +1,4 @@
-package estruturas;
+package vetor_lista.estruturas;
 
 public class No {
     
