@@ -1,34 +1,50 @@
 package pilha_fila.estruturas;
 
 public class Pilha {
-    private int topo;
     private String[] elementos;
-    private int capacidade;
-
+    private int topo;
+    
     public Pilha(int capacidade) {
-        this.capacidade = capacidade;
-        this.elementos = new String[this.capacidade];
-        this.topo = -1;
+        elementos = new String[capacidade];
+        topo = -1; 
     }
 
-    public void aumentarCapacidade(){
-        System.out.println("Aumentando capacidade de " + this.capacidade + " para " + (this.capacidade += (this.capacidade / 2)));
-        this.capacidade += (this.capacidade / 2);
-    }
-
-    public void empilhar(String novoElemento){
-        if (this.topo >= this.capacidade - 1){
-            this.aumentarCapacidade();
+    public void empilhar(String item) {
+        if (topo < elementos.length - 1) {
+            topo++;
+            elementos[topo] = item;
+        } else {
+            System.out.println("Pilha cheia! Não é possível empilhar.");
         }
-        System.out.println(topo);
-        this.topo++;
-        System.out.println(topo);
-        this.elementos[topo] = novoElemento;
+    }
+
+    public String desempilhar() {
+        if (!estaVazia()) {
+            String item = elementos[topo];
+            topo--;
+            return item;
+        } else {
+            System.out.println("Pilha vazia! Não é possível desempilhar.");
+            return null;
+        }
+    }
+    
+    public boolean estaVazia() {
+        return topo == -1;
+    }
+    
+    public String verTopo() {
+        if (!estaVazia()) {
+            return elementos[topo];
+        } else {
+            return null;
+        }
     }
 
     public void mostrarPilha(){
-        for (int i = 0; i < capacidade; i++) {
+        for (int i = 0; i < elementos.length; i++) {
             System.out.println("| " + this.elementos[i] + " |");
         }
     }
+    
 }
