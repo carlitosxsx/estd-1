@@ -1,5 +1,3 @@
-package pilha_fila.estruturas;
-
 public class Fila {
     private String[] elementos;
     private int inicio;

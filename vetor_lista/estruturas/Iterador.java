@@ -1,5 +1,3 @@
-package vetor_lista.estruturas;
-
 public class Iterador {
 
     Lista lista;

@@ -1,10 +1,4 @@
-package pilha_fila;
-
 import java.util.Scanner;
-
-import pilha_fila.estruturas.EditorTexto;
-import pilha_fila.estruturas.FilaImpressao;
-import pilha_fila.estruturas.Documento;
 
 public class Main {
     public static void main(String[] args) {

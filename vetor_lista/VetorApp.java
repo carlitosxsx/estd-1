@@ -1,14 +1,9 @@
-package vetor_lista;
-
-import vetor_lista.estruturas.Lista;
-import vetor_lista.estruturas.Iterador;
-
 public class VetorApp {
 
     public static void main(String[] args) {
 
         // -------------VETOR-------------
-        vetor_lista.Vetor vetor = new vetor_lista.Vetor(10);
+        Vetor vetor = new Vetor(10);
 
         vetor.adicionar(50);
         vetor.adicionar(12);

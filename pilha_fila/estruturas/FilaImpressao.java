@@ -1,5 +1,3 @@
-package pilha_fila.estruturas;
-
 public class FilaImpressao {
     private Documento[] fila;
     private int inicio;

@@ -1,5 +1,3 @@
-package pilha_fila.estruturas;
-
 public class Documento {
     private String nome;
     private int tamanho;

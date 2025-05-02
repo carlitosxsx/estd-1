@@ -1,5 +1,3 @@
-package pilha_fila.estruturas;
-
 public class EditorTexto {
     private String textoAtual;
     private Pilha pilhaDesfazer;

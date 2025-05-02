@@ -1,5 +1,3 @@
-package vetor_lista;
-
 public class Vetor {
 
     public Integer[] elementos; // 3fc -> 4fd

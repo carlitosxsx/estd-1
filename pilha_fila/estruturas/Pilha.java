@@ -1,5 +1,3 @@
-package pilha_fila.estruturas;
-
 public class Pilha {
     private String[] elementos;
     private int topo;
