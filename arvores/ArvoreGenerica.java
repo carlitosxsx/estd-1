@@ -40,6 +40,22 @@ public class ArvoreGenerica<E> implements Arvore<E> {
         }
     }
 
+    public void percursoPosOrdem(Posicao<E> posicao) {
+        for (Posicao<E> filho : filhos(posicao)) {
+            percursoPosOrdem(filho);
+        }
+        System.out.print(posicao.getElemento() + " ");
+    }
+
+    public void imprimirNosFolha(ArvoreGenerica<String> arvore, Posicao<String> posicao) {
+        if (((No<String>) posicao).ehFolha()) {
+            System.out.println(posicao.getElemento());
+        }
+        for (Posicao<String> filho : arvore.filhos(posicao)) {
+            imprimirNosFolha(arvore, filho);
+        }
+    }
+
     @Override
     public Posicao<E> raiz() {
         return raiz;
@@ -100,8 +116,13 @@ public class ArvoreGenerica<E> implements Arvore<E> {
 
     @Override
     public Integer profundidade(Posicao<E> posicao) {
-        // TODO
-        return 0;
+        No<E> no = validarNo(posicao);
+        int profundidade = 0;
+        while (no.getPai() != null) {
+            profundidade++;
+            no = no.getPai();
+        }
+        return profundidade;
     }
 }
 

@@ -29,5 +29,10 @@ public class No<E> implements Posicao<E> {
     public void adicionarFilho(No<E> filho) {
         filhos.add(filho);
     }
+    
+    /*QUESTÃO 03*/
+    public boolean ehFolha() {
+        return filhos.isEmpty();
+    }
 }
 
